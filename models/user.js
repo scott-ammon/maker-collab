@@ -1,4 +1,6 @@
 'use strict';
+var bcrypt = require('bcrypt');
+
 module.exports = (sequelize, DataTypes) => {
   var user = sequelize.define('user', {
     name: {
@@ -29,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
   	hooks: {
-  		beforeCreate: (pendingUser, options) => {
+  		beforeCreate: function(pendingUser, options) {
   			if(pendingUser && pendingUser.password) {
   				var hash = bcrypt.hashSync(pendingUser.password, 10);
   				pendingUser.password = hash;
@@ -37,18 +39,15 @@ module.exports = (sequelize, DataTypes) => {
   		}
   	}
   });
-
-  user.associate = models => {
+  user.associate = function(models) {
     // associations can be defined here
   };
-
   // Checks entered password against database hashed password
-  user.prototype.validPassword = passwordTyped => {
+  user.prototype.validPassword = function(passwordTyped) {
   	return bcrypt.compareSync(passwordTyped, this.password);
   };
-
   // Removes the password from user object for serializing
-  user.prototype.toJSON = () => {
+  user.prototype.toJSON = function() {
   	var userData = this.get();
   	delete userData.password;
   	return userData;
