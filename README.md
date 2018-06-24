@@ -14,7 +14,13 @@ There are several sites today where people can post about their hobby projects w
 
 RESTful routes:
 
-Database & Models:
+Database Models:
+
+| Model | Schema | Relationship |
+| ------------- |-------------| -----|
+| User | name,email,password | hasOne Profile |
+| Profile | hardware,software | hasMany Projects, belongsTo User |
+| Projects | title,picture,description,code,hardware | belongsTo Profile |
 
 ### Project Tracking
 
