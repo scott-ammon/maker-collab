@@ -8,19 +8,38 @@
 * Node.js
 
 ### Description
-There are several sites today where people can post about their hobby projects with microcontrollers and computers like Arduino and Raspberry Pi, but they are just that - a post describing a project typically worked on by one person. Maker-Collab aims to connect makers to work collaboratively on their projects, which helps people build new skillsets, share hardware and software resources, and build cool stuff!
+There are several sites today where people can post about their hobby maker projects with microcontrollers, mechatronics, etc., but they are just that - a post describing a project typically worked on by one person. Maker-Collab aims to connect makers to work collaboratively on their projects, which helps people build new skillsets, share hardware and software resources, and build cool stuff!
 
 ### Project Structure
 
-RESTful routes:
+#### RESTful routes:
 
-Database Models:
+(work in progress)
+| Method | Path | Action |
+| GET | '/' | index |
+| GET | '/auth/login' |  |
+| POST | '/auth/login' |  |
+| GET | '/auth/signup' | new |
+| POST | '/auth/signup' | create |
+| GET | '/auth/logout' |  |
+| GET | '/profile/new' | new |
+| GET | '/profile' | index |
+| POST | '/profile' | create |
+| PUT | '/profile/:id' | show |
+| GET | '/projects' | index |
+| GET | '/projects/:id' | show |
+| POST | '/projects/' | create |
+| DELETE | '/projects/:id' | delete |
 
-| Model | Schema | Relationship |
+
+#### Database Models:
+
+| Model | Schema | Relationship(s) |
 | ------------- |-------------| -----|
-| User | name,email,password | hasOne Profile |
-| Profile | hardware,software | hasMany Projects, belongsTo User |
-| Projects | title,picture,description,code,hardware | belongsTo Profile |
+| User | name, email, password, profileId | hasOne Profile |
+| Profile | bio, lat, long, userId | hasMany Projects, belongsTo User |
+| Projects | title,picture,description,code,hardware | belongsTo Profile, hasMany Tags |
+| Tags | tagName | belongsToMany Projects |
 
 ### Project Tracking
 
