@@ -15,6 +15,7 @@ There are several sites today where people can post about their hobby maker proj
 #### RESTful routes:
 
 (work in progress)
+
 | Method | Path | Action |
 | ------ |------| -------|
 | GET | '/' | index |
