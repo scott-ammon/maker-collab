@@ -45,11 +45,12 @@ app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
-app.get('/maker-map', function(req, res) {
+app.get('/maker-map', isLoggedIn, function(req, res) {
 	res.render('maker-map');
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/projects', require('./controllers/projects'));
 
 var server = app.listen(process.env.PORT || 3000);
 

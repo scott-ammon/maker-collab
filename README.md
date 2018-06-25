@@ -16,16 +16,17 @@ There are several sites today where people can post about their hobby maker proj
 
 (work in progress)
 | Method | Path | Action |
+| ------ |------| -------|
 | GET | '/' | index |
-| GET | '/auth/login' |  |
-| POST | '/auth/login' |  |
+| GET | '/auth/login' | ? |
+| POST | '/auth/login' | ? |
 | GET | '/auth/signup' | new |
 | POST | '/auth/signup' | create |
-| GET | '/auth/logout' |  |
+| GET | '/auth/logout' | ? |
 | GET | '/profile/new' | new |
 | GET | '/profile' | index |
 | POST | '/profile' | create |
-| PUT | '/profile/:id' | show |
+| PUT | '/profile/:id' | update |
 | GET | '/projects' | index |
 | GET | '/projects/:id' | show |
 | POST | '/projects/' | create |
@@ -35,10 +36,10 @@ There are several sites today where people can post about their hobby maker proj
 #### Database Models:
 
 | Model | Schema | Relationship(s) |
-| ------------- |-------------| -----|
-| User | name, email, password, profileId | hasOne Profile |
+| ----- |--------| ----------------|
+| User | name, email, password | hasOne Profile |
 | Profile | bio, lat, long, userId | hasMany Projects, belongsTo User |
-| Projects | title,picture,description,code,hardware | belongsTo Profile, hasMany Tags |
+| Projects | title,description,code,lookingFor,profileId | belongsTo Profile, hasMany Tags |
 | Tags | tagName | belongsToMany Projects |
 
 ### Project Tracking
