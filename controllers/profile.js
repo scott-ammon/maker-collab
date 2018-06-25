@@ -3,19 +3,24 @@ var db = require('../models');
 var router = express.Router();
 var isLoggedIn = require('../middleware/isLoggedIn');
 
+// GET - main profile page of user
 router.get('/', isLoggedIn, function(req, res) {
   db.profile.find({
     where: {userId: req.user.id}
   }).then(function(profile) {
-    res.render('profile', {profile: profile});
+    // find associated projects in db here...
+    // db.profile.findProjects();
+
+    res.render('profile/index', {profile: profile});
   });
 });
 
+// GET - returns form for creating user profile
 router.get('/new', isLoggedIn, function(req, res) {
   res.render('profile/new');
 });
 
-// POST route for new profile
+// POST - posts new profile for user
 router.post('/', isLoggedIn, function(req, res) {
 	// create DB entry for project!
   db.profile.create({
@@ -24,9 +29,15 @@ router.post('/', isLoggedIn, function(req, res) {
   	userId: req.user.id
   }).then(function(profile) {
   	res.redirect('/');
-  }); // add error handling here?
-
-	// don't forget to add tags as well
+  }); // add error handling here
 });
+
+// GET - shows a particular user profile
+router.get('/profile/:id', isLoggedIn, function(req, res) {
+  db.profile.findById(req.params.id).then(function(profile) {
+    res.render('profile/show', {profile: profile});
+  });
+});
+
 
 module.exports = router;
