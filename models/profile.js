@@ -1,4 +1,6 @@
 'use strict';
+var geocoder = require('geocoder');
+
 module.exports = (sequelize, DataTypes) => {
   var profile = sequelize.define('profile', {
     bio: DataTypes.TEXT,
@@ -7,11 +9,26 @@ module.exports = (sequelize, DataTypes) => {
     lng: DataTypes.FLOAT,
     userId: DataTypes.INTEGER
   }, {
-    // add hook for Geocoding to grab lat and lng!
+    hooks: {
+      beforeCreate: function(place, options) {
+        console.log('--before create');
+        console.log('--Options ', options);
+        geocoder.geocode(place.address, function(err, data) {
+          console.log('--Start Geocoder')
+          if (err) return err;
+          console.log('--Geocoder geometry Data: ', data.results[0].geometry)
+          place.lat = data.results[0].geometry.location.lat;
+          place.lng = data.results[0].geometry.location.lng;
+          place.save().then(function(){
+            console.log('--Item Updated: ', place)
+          })
+        })
+        console.log('---Outside of Geocoder')
+      }
+    }
   });
   profile.associate = function(models) {
     // associations can be defined here
-    // models.profile.belongsTo(models.user);
     models.profile.hasMany(models.project);
   };
   return profile;

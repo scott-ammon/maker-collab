@@ -41,7 +41,7 @@ There are several sites today where people can post about their hobby maker proj
 | ----- |--------| ----------------|
 | User | name, email, password | hasOne Profile |
 | Profile | bio, location, lat, lng, userId | hasMany Projects, belongsTo User |
-| Projects | title,description,code,lookingFor,profileId | belongsTo Profile, hasMany Tags |
+| Projects | title,description,code,lookingFor,profileId | belongsTo User, hasMany Tags |
 | Tags | tagName | belongsToMany Projects |
 
 ### Project Tracking

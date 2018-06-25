@@ -41,7 +41,6 @@ module.exports = (sequelize, DataTypes) => {
   });
   user.associate = function(models) {
     // associations can be defined here
-    // models.user.hasOne(models.profile);
   };
   // Checks entered password against database hashed password
   user.prototype.validPassword = function(passwordTyped) {

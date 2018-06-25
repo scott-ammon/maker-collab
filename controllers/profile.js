@@ -8,10 +8,9 @@ router.get('/', isLoggedIn, function(req, res) {
   db.profile.find({
     where: {userId: req.user.id}
   }).then(function(profile) {
-    // find associated projects in db here...
-    // db.profile.findProjects();
-
-    res.render('profile/index', {profile: profile});
+    profile.getProjects().then(function(projects) {
+      res.render('profile/index', {profile: profile, projects: projects});
+    });
   });
 });
 
@@ -38,6 +37,8 @@ router.get('/profile/:id', isLoggedIn, function(req, res) {
     res.render('profile/show', {profile: profile});
   });
 });
+
+// PUT - edits the users profile
 
 
 module.exports = router;
