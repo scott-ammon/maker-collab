@@ -10,17 +10,17 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER
   }, {
     hooks: {
-      beforeCreate: function(place, options) {
+      beforeCreate: function(profile, options) {
         console.log('--before create');
         console.log('--Options ', options);
-        geocoder.geocode(place.address, function(err, data) {
+        geocoder.geocode(profile.location, function(err, data) {
           console.log('--Start Geocoder')
           if (err) return err;
           console.log('--Geocoder geometry Data: ', data.results[0].geometry)
-          place.lat = data.results[0].geometry.location.lat;
-          place.lng = data.results[0].geometry.location.lng;
-          place.save().then(function(){
-            console.log('--Item Updated: ', place)
+          profile.lat = data.results[0].geometry.location.lat;
+          profile.lng = data.results[0].geometry.location.lng;
+          profile.save().then(function(){
+            console.log('--Item Updated: ', profile)
           })
         })
         console.log('---Outside of Geocoder')
