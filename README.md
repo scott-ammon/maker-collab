@@ -27,6 +27,7 @@ There are several sites today where people can post about their hobby maker proj
 | GET | '/profile/new' | new |
 | GET | '/profile' | index |
 | POST | '/profile' | create |
+| GET | '/profile/:id' | show |
 | PUT | '/profile/:id' | update |
 | GET | '/projects' | index |
 | GET | '/projects/:id' | show |
@@ -39,7 +40,7 @@ There are several sites today where people can post about their hobby maker proj
 | Model | Schema | Relationship(s) |
 | ----- |--------| ----------------|
 | User | name, email, password | hasOne Profile |
-| Profile | bio, lat, long, userId | hasMany Projects, belongsTo User |
+| Profile | bio, lat, lng, userId | hasMany Projects, belongsTo User |
 | Projects | title,description,code,lookingFor,profileId | belongsTo Profile, hasMany Tags |
 | Tags | tagName | belongsToMany Projects |
 
