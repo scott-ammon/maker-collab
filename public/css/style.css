@@ -1,0 +1,13 @@
+.map-container {
+	margin-top: 5em;
+}
+
+.map {
+  width: 70vw;
+  height: 80vh;
+  border-radius: 1em;
+}
+
+.brand-logo {
+	font-family: "Orbitron", sans-serif;
+}

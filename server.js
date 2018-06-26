@@ -6,6 +6,7 @@ var session = require('express-session');
 var passport = require('./config/passportConfig');
 var isLoggedIn = require('./middleware/isLoggedIn');
 var flash = require('connect-flash');
+var db = require('./models');
 
 var app = express();
 
@@ -13,6 +14,7 @@ app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(__dirname + '/public/'));
 app.use(ejsLayouts);
 
 // 1. This needs to come before you app.use passport
@@ -42,7 +44,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/maker-map', isLoggedIn, function(req, res) {
-	res.render('maker-map');
+	db.profile.findAll().then(function(profiles) {
+      res.render('maker-map', {profiles: profiles});
+  });
 });
 
 app.use('/auth', require('./controllers/auth'));

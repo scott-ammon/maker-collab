@@ -34,6 +34,13 @@ router.get('/:id', isLoggedIn, function(req, res) {
 // PUT - edits a specific project
 
 // DELETE - deletes a specific project
+router.delete('/:id', function(req, res) {
+	db.project.destroy({
+		where: {id: req.params.id}
+	}).then(function(data) {
+    res.sendStatus(200);
+	});
+});
 
 
 module.exports = router;

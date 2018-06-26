@@ -8,7 +8,8 @@
 
 <!-- add forEach here to loop through existing projects -->
 <% projects.forEach(function(project) { %>
-	<a href="/projects/<%= project.id %>"><%= project.title %></a><br>
+	<a href="/projects/<%= project.id %>"><%= project.title %></a>
+	<a class= "delete" href="/projects/<%= project.id %>">Delete</a><br>
 <% }); %>
 
 <a href="/projects/new" class="btn btn-primary">Add Project</a>

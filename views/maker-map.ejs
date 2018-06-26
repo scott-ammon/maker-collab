@@ -1,4 +1,9 @@
-<div id='map' style='width: 900px; height: 500px;'></div>
+<div class="map-container row">
+	<div class="col l1 m8 s12">
+		<div class="map" id="map"></div>
+	</div>
+</div>
+
 
 <script>
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2NvdHRhbW1vbiIsImEiOiJjaml0NGg3cmExY3RiM3ZycWhiaXBuMW1jIn0.jKNpU_--8pLwkTAoNaYc-A';
@@ -8,7 +13,16 @@ container: 'map',
 style: 'mapbox://styles/scottammon/cjit4mrto3t7j2rmsf423fo2u'
 });
 
-var marker = new mapboxgl.Marker()
-  .setLngLat([30.5, 50.5])
-  .addTo(map);
+var profiles = <%- JSON.stringify(profiles) %>;
+
+profiles.forEach(function(profile) {
+	if(profile.lng && profile.lat) {
+    var marker = new mapboxgl.Marker()
+    .setLngLat([profile.lng, profile.lat])
+    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML('<h5>' + profile.bio + '</h5><p>' + profile.location + '</p>'))
+    .addTo(map);
+  }
+});
+
 </script>
