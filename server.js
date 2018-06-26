@@ -44,12 +44,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/maker-map', isLoggedIn, function(req, res) {
-	db.projects.find({
-    where: {lookingFor: req.user.experience}
-  }).then(function(projects) {
-      console.log(projects);
-      res.render('maker-map', {profiles: projects});
-    });
+  db.profile.findAll().then(function(profiles) {
+      res.render('maker-map', {profiles: profiles});
+  });
 });
 
 app.use('/auth', require('./controllers/auth'));

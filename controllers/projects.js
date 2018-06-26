@@ -65,7 +65,6 @@ router.get('/:id/edit', isLoggedIn, function(req, res) {
 
 // PUT - edits a specific project
 router.put('/:id', isLoggedIn, function(req, res) {
-	console.log('PROJECT ID TO PUT IS:', req.params.id);
   db.project.update({
     title: req.body.title,
     description: req.body.description,

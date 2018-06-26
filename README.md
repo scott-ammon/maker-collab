@@ -37,12 +37,23 @@ There are several sites today where people can post about their hobby maker proj
 
 #### Database Models:
 
+OLD:
+
 | Model | Schema | Relationship(s) |
 | ----- |--------| ----------------|
 | User | name, email, password | hasOne Profile |
 | Profile | bio, location, experience, lat, lng, userId | hasMany Projects, belongsTo User |
 | Projects | title,description,code,lookingFor,profileId | belongsTo User, hasMany Tags |
 | Tags | tagName | belongsToMany Projects |
+
+NEW:
+
+| Model | Schema | Relationship(s) |
+| ----- |--------| ----------------|
+| User | name, email, password | has one Profile, hasMany Experience |
+| Projects | title,description,lookingFor,location,lat,lng | belongsTo User, hasMany Experience |
+| Experience | experience | belongsToMany Projects |
+
 
 ### Project Tracking
 
