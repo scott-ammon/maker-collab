@@ -40,7 +40,7 @@ There are several sites today where people can post about their hobby maker proj
 | Model | Schema | Relationship(s) |
 | ----- |--------| ----------------|
 | User | name, email, password | hasOne Profile |
-| Profile | bio, location, lat, lng, userId | hasMany Projects, belongsTo User |
+| Profile | bio, location, experience, lat, lng, userId | hasMany Projects, belongsTo User |
 | Projects | title,description,code,lookingFor,profileId | belongsTo User, hasMany Tags |
 | Tags | tagName | belongsToMany Projects |
 
@@ -58,5 +58,4 @@ I tracked progress with this [Trello Board](https://trello.com/b/pkgP40vV/ga-pro
 ### Result and Next Steps
 
 Future items i'd like to implement are:
-
 

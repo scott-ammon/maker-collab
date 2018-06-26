@@ -25,6 +25,7 @@ router.post('/', isLoggedIn, function(req, res) {
   db.profile.create({
   	bio: req.body.bio,
     location: req.body.location,
+    experience: req.body.experience,
   	userId: req.user.id
   }).then(function(profile) {
   	res.redirect('/');

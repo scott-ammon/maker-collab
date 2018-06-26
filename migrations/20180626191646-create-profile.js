@@ -14,6 +14,9 @@ module.exports = {
       location: {
         type: Sequelize.STRING
       },
+      experience: {
+        type: Sequelize.STRING
+      },
       lat: {
         type: Sequelize.FLOAT
       },
