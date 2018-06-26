@@ -9,12 +9,12 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.46.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One|Open+Sans:400,700" rel="stylesheet">
   </head>
   <body>
-    <nav>
+    <nav class="transparent-bg">
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo center">Maker-Collab</a>
+        <a href="/" class="brand-logo">Maker-Collab</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if(currentUser) { %>
           <li><a href="/maker-map">Maker-Map</a></li>
@@ -28,8 +28,8 @@
     </nav>
         
     <div class="container">
-      <% include partials/alerts %>
       <%- body %>
+      <% include partials/alerts %>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

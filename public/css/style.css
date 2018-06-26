@@ -1,3 +1,9 @@
+body {
+	height: 100vh;
+	background: linear-gradient(to bottom right, #00c6ff, #0072ff);
+	font-family: "Open Sans", sans-serif;
+}
+
 .map-container {
 	margin-top: 5em;
 }
@@ -9,5 +15,23 @@
 }
 
 .brand-logo {
-	font-family: "Orbitron", sans-serif;
+	font-family: "Hammersmith One", sans-serif;
+}
+
+.signup {
+	margin-top: 20vh;
+}
+
+.transparent-bg {
+	background-color: rgba(0, 0, 0, 0);
+	box-shadow: none;
+}
+
+.signup-box {
+	height: 30vh;
+	border-radius: 10px;
+}
+
+.btn {
+	border-radius: 3em;
 }
