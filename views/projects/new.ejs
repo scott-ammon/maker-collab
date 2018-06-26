@@ -15,13 +15,20 @@
     <label for="code">Code Snippets</label>
     <input id="code" class="form-control" type="text" name="code">
   </div>
-
-  <div class="form-group">
-    <label for="lookingFor">Looking For</label>
-    <input id="lookingFor" class="form-control" type="text" name="lookingFor">
+   
+  <div class="form-group input-field">
+    <select id="lookingFor" class="form-control" name="lookingFor">
+      <option value="" disabled="disabled" selected="selected">Looking for people with experience in:</option>
+      <option value="Arduino">Arduino</option>
+      <option value="Raspberry Pi">Raspberry Pi</option>
+      <option value="Intel Edison">Intel Edison</option>
+      <option value="Intel Edison">Asus Tinker Board</option>
+      <option value="Intel Edison">BeagleBone</option>
+      <option value="Intel Edison">Qualcomm Dragonboard</option>
+    </select>
   </div>
 
-   <div class="form-group">
+  <div class="form-group">
     <label for="tags">Tags</label>
     <input type="text" class="form-control" id="tags" name="tagName">
   </div>

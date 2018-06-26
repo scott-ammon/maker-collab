@@ -3,7 +3,7 @@
 <p><%= project.code %></p>
 <h3><%= project.lookingFor %></h3>
 
-<p style="display:inline">Tags:</p>
+<p>Tags:</p>
 <% project.tags.forEach(function(tag){ %> 
-  <p style="display:inline" class='tag'><%= tag.name %> </p>
+  <p><%= tag.tagName %> </p>
 <% }); %>
