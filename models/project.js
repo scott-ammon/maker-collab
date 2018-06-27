@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
         }).catch(function(err) {
           console.log(err);
         });
-        console.log('---Outside of Geocoder');
       }
     }
   });

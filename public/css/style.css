@@ -9,10 +9,9 @@ body {
 }
 
 .map {
-	margin: 0;
   width: 70vw;
   height: 70vh;
-  border-radius: 1em;
+  border-radius: 0.5em;
 }
 
 .brand-logo {
