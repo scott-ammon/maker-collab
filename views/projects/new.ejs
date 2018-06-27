@@ -1,3 +1,4 @@
+<div class="display-box">
 <h1>Add a New Project:</h1>
 
 <form action="/projects" method="POST">
@@ -26,5 +27,84 @@
     <input type="text" class="form-control" id="tags" name="tagName">
   </div>
 
+<div class="row">
+<div class="col s12 l2">
+  <p>Hardware:</p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="arduino" name="arduinoTag" value="arduino" />
+      <span>Arduino</span>
+    </label>
+  </p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="raspberry-pi" name="rpiTag" value="raspberry-pi" />
+      <span>Raspberry Pi</span>
+    </label>
+  </p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="intel" name="intelTag" value="intel-edison" />
+      <span>Intel Edison</span>
+    </label>
+  </p>
+</div>
+
+<div class="col s12 l2">
+  <p>Software:</p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="asus" name="asusTag" value="asus-tinker" />
+      <span>ASUS Tinker Board</span>
+    </label>
+  </p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="odroid" name="odroidTag" value="odroid" />
+      <span>Odroid</span>
+    </label>
+  </p>
+
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="js" name="jsTag" value="javascript" />
+      <span>JavaScript</span>
+    </label>
+  </p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="python" name="pyTag" value="python" />
+      <span>Python</span>
+    </label>
+  </p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="java" name="javaTag" value="java" />
+      <span>Java</span>
+    </label>
+  </p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="c++" name="cTag" value="c++" />
+      <span>C++</span>
+    </label>
+  </p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="ruby" name="rubyTag" value="ruby" />
+      <span>Ruby</span>
+    </label>
+  </p>
+  <p class="checkboxes">
+    <label>
+      <input type="checkbox" id="processing" name="pTag" value="processing" />
+      <span>Processing</span>
+    </label>
+  </p>
+</div>
+
+</div>
   <button class="btn btn-primary" type="submit">Post Project</button>
 </form>
+
+</div>

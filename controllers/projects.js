@@ -18,10 +18,26 @@ router.post('/', isLoggedIn, function(req, res) {
       location: req.body.location,
       userId: req.user.id
   	}).then(function(project) {
-   
-      // remove spaces, separate tags into array of strings
-      var tagArray = req.body.tagName.replace(/\s/g, '').split(','); 
-    
+
+      var checkboxArr = [req.body.arduinoTag,
+      								   req.body.rpiTag,
+      					    	   req.body.intelTag,
+      					    	   req.body.rpiTag,
+      					    	   req.body.asusTag,
+      					    	   req.body.odroidTag,
+      					    	   req.body.jsTag,
+      					    	   req.body.pyTag,
+      					    	   req.body.javaTag,
+      					    	   req.body.cTag,
+      					    	   req.body.rubyTag];
+      var tagArray = [];
+
+      for(let i = 0; i < checkboxArr.length; i++) {
+      	if(checkboxArr[i]) {
+      		tagArray.push(checkboxArr[i]);
+      	}
+      }
+
       // define tag function to add to database with each async call
       var addTag = function(oneTag, callback) {
         db.tag.findOrCreate({
@@ -48,7 +64,12 @@ router.get('/:id', isLoggedIn, function(req, res) {
     where: {id: req.params.id},
     include: [db.tag]
   }).then(function(project) {
-    res.render('projects/show', {project: project});
+  	// find user associated with project, pass into render
+  	db.user.find({
+  		where: {id: project.userId}
+  	}).then(function(user) {
+  		res.render('projects/show', {user: user, project: project});
+  	});
   });
 });
 

@@ -25,7 +25,7 @@ projects.forEach(function(project) {
     var marker = new mapboxgl.Marker()
     .setLngLat([project.lng, project.lat])
     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-    .setHTML('<h5>' + project.title + '</h5>'))
+    .setHTML("<a href='/projects/" + project.id + "'>" + project.title + "</a>"))
     .addTo(map);
   }
 });
