@@ -51,6 +51,18 @@ app.get('/maker-map', isLoggedIn, function(req, res) {
     });
 });
 
+app.post('/maker-map/filter', isLoggedIn, function(req, res) {
+  console.log("REQ.BODY IS: ", req.body);
+  db.tag.find({
+    where: {tagName: req.body.tagFilter}
+  }).then(function(tag) {
+    tag.getProjects().then(function(projects) {
+      console.log("RESULTS: ", projects);
+      res.render('maker-map', {projects: projects});
+    });
+  });
+});
+
 app.use('/auth', require('./controllers/auth'));
 app.use('/projects', require('./controllers/projects'));
 app.use('/user', require('./controllers/user'));

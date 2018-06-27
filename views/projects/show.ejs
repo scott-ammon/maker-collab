@@ -1,9 +1,11 @@
 <div class="display-box">
   <h3><%= project.title %></h3>
-  <h5>Project by: <%= user.name %></h5>
+  <h5>Project Idea By: <%= user.name %></h5>
+  <p>Location: <%= project.location %></p>
   <p><%= project.description %></p>
-  <pre class="prettyprint">><%= project.code %></pre>
-  <h3><%= project.lookingFor %></h3>
+  <% if(project.code) { %>
+       <pre class="prettyprint">><%= project.code %></pre>
+  <% } %>
 
   <p>Tags:</p>
   <% project.tags.forEach(function(tag){ %> 

@@ -19,6 +19,7 @@ router.post('/', isLoggedIn, function(req, res) {
       userId: req.user.id
   	}).then(function(project) {
 
+      // array of checkbox values for hardware + software
       var checkboxArr = [req.body.arduinoTag,
       								   req.body.rpiTag,
       					    	   req.body.intelTag,
@@ -32,6 +33,7 @@ router.post('/', isLoggedIn, function(req, res) {
       					    	   req.body.rubyTag];
       var tagArray = [];
 
+      // only push tags that are checked
       for(let i = 0; i < checkboxArr.length; i++) {
       	if(checkboxArr[i]) {
       		tagArray.push(checkboxArr[i]);
