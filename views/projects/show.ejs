@@ -1,9 +1,13 @@
-<h3><%= project.title %></h3>
-<p><%= project.description %></p>
-<p><%= project.code %></p>
-<h3><%= project.lookingFor %></h3>
+<div class="display-box">
+  <h3><%= project.title %></h3>
+  <p><%= project.description %></p>
+  <pre class="prettyprint">><%= project.code %></pre>
+  <h3><%= project.lookingFor %></h3>
 
-<p>Tags:</p>
-<% project.tags.forEach(function(tag){ %> 
-  <p><%= tag.tagName %> </p>
-<% }); %>
+  <p>Tags:</p>
+  <% project.tags.forEach(function(tag){ %> 
+    <p><%= tag.tagName %> </p>
+  <% }); %>
+</div>
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst""></script>

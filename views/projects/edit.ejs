@@ -1,4 +1,4 @@
-<h1>Edit Project:</h1>
+<h3>Edit Project:</h3>
 
 <form action="/projects/<%= project.id %>" method="POST" class="edit-form">
   <div class="form-group">
@@ -13,7 +13,8 @@
 
   <div class="form-group">
     <label for="code">Code Snippets</label>
-    <input id="code" class="form-control" type="text" name="code" value="<%= project.code %>">
+    <textarea id="code" class="form-control" type="text" name="code" value="<%= project.code %>">
+    </textarea>
   </div>
 
   <div class="form-group">
@@ -26,5 +27,5 @@
     <input type="text" class="form-control" id="tags" name="tagName">
   </div>
 
-  <button class="btn btn-primary" type="submit">Save Changes</button>
+  <button class="btn btn-primary right" type="submit">Save Changes</button>
 </form>

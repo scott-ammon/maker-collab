@@ -5,9 +5,9 @@ var isLoggedIn = require('../middleware/isLoggedIn');
 
 // GET - main profile page of user
 router.get('/', isLoggedIn, function(req, res) {
-  db.user.findById(req.user.id).then(function(profile) {
-    profile.getProjects().then(function(projects) {
-      res.render('user/index', {projects: projects});
+  db.user.findById(req.user.id).then(function(user) {
+    user.getProjects().then(function(projects) {
+      res.render('user/index', {user: user, projects: projects});
     });
   });
 });
