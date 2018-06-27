@@ -1,31 +1,35 @@
+<form action="/map/filter" method="POST">
+  <div class="row"> 
+    <div class="form-group input-field col s8 l3 offset-l4">
+      <select id="tagFilter" class="form-control" name="tagFilter">
+        <option value="" disabled="disabled" selected="selected">Select Tag:</option>
+        <option value="arduino">Arduino</option>
+        <option value="raspberry-pi">Raspberry Pi</option>
+        <option value="intel-edison">Intel Edison</option>
+        <option value="asus-tinker">ASUS Tinker Board</option>
+        <option value="odroid">Odroid</option>
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="c++">C++</option>
+        <option value="ruby">Ruby</option>
+        <option value="processing">Processing</option>
+      </select>
+    </div>
+    <div class="form-group input-field col s4 l2">
+      <button class="btn blue" type="submit">Filter Map</button>
+    </div>
+  </div>
+</form>
+
 <div class="map-container row">
 	<div class="col l1 m8 s12">
 		<div class="map" id="map"></div>
 	</div>
 </div>
 
-<form action="/maker-map/filter" method="POST">
-  <div class="form-group input-field">
-    <select id="tagFilter" class="form-control" name="tagFilter">
-      <option value="" disabled="disabled" selected="selected">Filter Map By Tag:</option>
-      <option name="arduino" value="arduino">Arduino</option>
-      <option value="raspberry-pi">Raspberry Pi</option>
-      <option value="intel-edison">Intel Edison</option>
-      <option value="asus-tinker">ASUS Tinker Board</option>
-      <option value="odroid">Odroid</option>
-      <option value="javascript">JavaScript</option>
-      <option value="python">Python</option>
-      <option value="java">Java</option>
-      <option value="c++">C++</option>
-      <option value="ruby">Ruby</option>
-      <option value="processing">Processing</option>
-    </select>
-  </div>
-    <button class="btn blue" type="submit">Filter Map</button>
-</form>
-
 <script>
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2NvdHRhbW1vbiIsImEiOiJjaml0NGg3cmExY3RiM3ZycWhiaXBuMW1jIn0.jKNpU_--8pLwkTAoNaYc-A';
+mapboxgl.accessToken = <%- JSON.stringify(process.env.MAPBOX) %>;
 
 var map = new mapboxgl.Map({
 container: 'map',
