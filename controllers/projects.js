@@ -11,40 +11,36 @@ router.get('/new', isLoggedIn, function(req, res) {
 
 // POST - posts the new project to the database
 router.post('/', isLoggedIn, function(req, res) { 
-  db.profile.find({
-  	where: {userId: req.user.id}
-  }).then(function(profile) {
-  	profile.createProject({
+  db.project.create({
   	  title: req.body.title,
       description: req.body.description,
       code: req.body.code,
-      lookingFor: req.body.lookingFor
+      location: req.body.location,
+      userId: req.user.id
   	}).then(function(project) {
+   
+      // remove spaces, separate tags into array of strings
+      var tagArray = req.body.tagName.replace(/\s/g, '').split(','); 
     
-    // remove spaces, separate tags into array of strings
-    var tagArray = req.body.tagName.replace(/\s/g, '').split(','); 
+      // define tag function to add to database with each async call
+      var addTag = function(oneTag, callback) {
+        db.tag.findOrCreate({
+          where: {tagName: oneTag}
+        }).spread(function(tag, created) {
+            project.addTag(tag);
+          }).then(function(tag) {
+          	// error handling here
+          	console.log('Tag created');
+          });
+      }
     
-    // define tag function to add to database with each async call
-    var addTag = function(oneTag, callback) {
-      db.tag.findOrCreate({
-        where: {tagName: oneTag}
-      }).spread(function(tag, created) {
-          project.addTag(tag);
-        }).then(function(tag) {
-        	// error handling here
-        	console.log('Tag created');
-        });
-    }
-    
-    // async call to create each tag in the database
-    async.concat(tagArray, addTag, function(err, results) {
-      console.log('Done with async calls!');
-    });
-
-    res.redirect('/profile');
+      // async call to create each tag in the database
+      async.concat(tagArray, addTag, function(err, results) {
+        console.log('Done with async calls!');
+      });
+    res.redirect('/user');
   	});
-  });
-}); 
+});
 
 // GET - show a specific project
 router.get('/:id', isLoggedIn, function(req, res) {

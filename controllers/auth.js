@@ -26,7 +26,7 @@ router.post('/signup', function(req, res) {
 		if(created) {
 			// No record was found, so we created one
 			passport.authenticate('local', {
-				successRedirect: '/profile/new',
+				successRedirect: '/user',
 				successFlash: 'Account created and logged in!'
 			})(req, res);
 		} else {
@@ -44,7 +44,7 @@ router.post('/signup', function(req, res) {
 
 // POST /auth/login - the route that processes the login form
 router.post('/login', passport.authenticate('local', {
-	successRedirect: '/profile',
+	successRedirect: '/user',
 	failureRedirect: '/auth/login',
 	successFlash: 'You have logged in!',
 	failureFlash: 'Invalid username and/or password!'

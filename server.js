@@ -47,11 +47,20 @@ app.get('/maker-map', isLoggedIn, function(req, res) {
   db.profile.findAll().then(function(profiles) {
       res.render('maker-map', {profiles: profiles});
   });
+
+  db.project.findAll({
+    where: {lookingFor: req.user.experience}
+  }).then(function(projects) {
+
+    
+  })
+
 });
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/projects', require('./controllers/projects'));
 app.use('/profile', require('./controllers/profile'));
+app.use('/user', require('./controllers/user'));
 
 var server = app.listen(process.env.PORT || 3000);
 

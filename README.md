@@ -50,9 +50,9 @@ NEW:
 
 | Model | Schema | Relationship(s) |
 | ----- |--------| ----------------|
-| User | name, email, password | has one Profile, hasMany Experience |
-| Projects | title,description,lookingFor,location,lat,lng | belongsTo User, hasMany Experience |
-| Experience | experience | belongsToMany Projects |
+| User | name, email, password | hasOne Profile |
+| Projects | title,description,location,lat,lng,userId | belongsTo User, hasMany Tags |
+| Tags | tagName | belongsToMany Projects |
 
 
 ### Project Tracking
