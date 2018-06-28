@@ -105,5 +105,8 @@ router.delete('/:id', function(req, res) {
 	});
 });
 
+router.get('/collab/:id', function(req, res) {
+  
+})
 
 module.exports = router;

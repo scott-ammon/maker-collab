@@ -8,7 +8,8 @@ router.get('/', isLoggedIn, function(req, res) {
   db.project.findAll({
     include: [db.tag]
   }).then(function(projects) {
-      res.render('maker-map', {projects: projects});
+  	var mapboxToken = process.env.MAPBOX;
+      res.render('maker-map', {projects: projects, mapboxToken: mapboxToken});
     });
 });
 
@@ -16,10 +17,16 @@ router.post('/filter', isLoggedIn, function(req, res) {
   db.tag.find({
     where: {tagName: req.body.tagFilter}
   }).then(function(tag) {
-  	if (tag)
-    tag.getProjects().then(function(projects) {
-      res.render('maker-map', {projects: projects});
-    });
+  	if (tag) {
+      tag.getProjects().then(function(projects) {
+    	  var mapboxToken = process.env.MAPBOX;
+        res.render('maker-map', {projects: projects, mapboxToken: mapboxToken});
+      });
+    } else {
+    	var mapboxToken = process.env.MAPBOX;
+    	projects = [];
+    	res.render('maker-map', {projects: projects, mapboxToken: mapboxToken});
+    }
   });
 });
 
