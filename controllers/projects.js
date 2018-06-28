@@ -19,7 +19,7 @@ router.post('/', isLoggedIn, function(req, res) {
       userId: req.user.id
   	}).then(function(project) {
 
-      // array of checkbox values for hardware + software
+      // array of checkbox values for hardware + software tags
       var checkboxArr = [req.body.arduinoTag,
       								   req.body.rpiTag,
       					    	   req.body.intelTag,

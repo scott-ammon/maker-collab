@@ -1,3 +1,4 @@
 $(document).ready(function(){
-    $('select').formSelect();
+  // auto initialize any Materialize components
+  M.AutoInit();
 });
