@@ -9,7 +9,7 @@ router.get('/', isLoggedIn, function(req, res) {
     include: [db.tag]
   }).then(function(projects) {
   	var mapboxToken = process.env.MAPBOX;
-      res.render('maker-map', {projects: projects, mapboxToken: mapboxToken});
+      res.render('map/index', {projects: projects, mapboxToken: mapboxToken});
     });
 });
 
@@ -20,12 +20,12 @@ router.post('/filter', isLoggedIn, function(req, res) {
   	if (tag) {
       tag.getProjects().then(function(projects) {
     	  var mapboxToken = process.env.MAPBOX;
-        res.render('maker-map', {projects: projects, mapboxToken: mapboxToken});
+        res.render('map/index', {projects: projects, mapboxToken: mapboxToken});
       });
     } else {
     	var mapboxToken = process.env.MAPBOX;
     	projects = [];
-    	res.render('maker-map', {projects: projects, mapboxToken: mapboxToken});
+    	res.render('map/index', {projects: projects, mapboxToken: mapboxToken});
     }
   });
 });
