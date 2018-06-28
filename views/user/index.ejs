@@ -1,15 +1,14 @@
 <h2><%= user.name %>'s Profile</h2>
-
 <h3>Projects:</h3>
 
-<!-- add forEach here to loop through existing projects -->
-<% projects.forEach(function(project) { %>
-  <div class="content-box col s12 l8">
-	  <a class="primary-anchor" href="/projects/<%= project.id %>"><%= project.title %></a>
-	  <a class="btn blue" href="/projects/<%= project.id %>/edit">Edit</a>&nbsp
-	  <a class= "btn red delete" href="/projects/<%= project.id %>"><i class="material-icons">delete</i></a><br>
-  </div>
-<% }); %>
+<!-- <div class="row"> -->
+  <!-- add forEach here to loop through existing projects -->
+  <% projects.forEach(function(project) { %>
+    <div class="display-box col s12 l12">
+  	  <a class="primary-anchor" href="/projects/<%= project.id %>"><%= project.title %></a>
+    </div><br>
+  <% }); %>
+<!-- </div> -->
 
-<a href="/projects/new" class="btn btn-primary">Add Project</a>
+<a href="/projects/new" class="btn btn-primary right">Add Project</a>
 

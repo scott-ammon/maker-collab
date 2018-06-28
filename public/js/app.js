@@ -22,7 +22,7 @@ $(document).ready(function() {
       method: 'DELETE',
       url: url
     }).done(function(data) {
-      window.location = '/profile';
+      window.location = '/user';
     })
   });
 });

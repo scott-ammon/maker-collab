@@ -1,7 +1,8 @@
 <div class="display-box">
   <h3><%= project.title %></h3>
   <h5>Project Idea By: <%= user.name %></h5>
-  <p>Location: <%= project.location %></p>
+  <p>Posted: <%= project.createdAt %></p>
+  <p>Address: <%= project.location %></p>
   <p><%= project.description %></p>
   <% if(project.code) { %>
        <pre class="prettyprint">><%= project.code %></pre>
@@ -13,6 +14,11 @@
   <% }); %>
 </div>
 
-<a class="btn blue right" href="mailto:<%= user.email %>?Subject=<%= project.title %> - Let's%20collaborate!">Collaborate!</a>
+<% if(currentUser !== user.id) { %>
+  <a class="btn blue right" href="mailto:<%= user.email %>?Subject=<%= project.title %> - Let's%20collaborate!">Collaborate!</a>
+<% } else { %>
+  <a class="btn blue" href="/projects/<%= project.id %>/edit">Edit</a>&nbsp
+	<a class= "btn red delete" href="/projects/<%= project.id %>"><i class="material-icons">delete</i></a><br>
+<% } %>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst""></script>

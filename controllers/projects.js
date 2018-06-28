@@ -70,7 +70,7 @@ router.get('/:id', isLoggedIn, function(req, res) {
   	db.user.find({
   		where: {id: project.userId}
   	}).then(function(user) {
-  		res.render('projects/show', {user: user, project: project});
+  		res.render('projects/show', {user: user, currentUser: req.user.id, project: project});
   	});
   });
 });
