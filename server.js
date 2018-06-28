@@ -40,7 +40,11 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-  res.render('index');
+  db.project.findAll({
+    include: [db.tag]
+  }).then(function(projects) {
+    res.render('index', {projects: projects});
+  });
 });
 
 app.use('/auth', require('./controllers/auth'));

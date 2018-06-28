@@ -1,4 +1,15 @@
-<h3 class="center">The place to meet other makers to build & code your next project with!</h3>
-<p class="center">There is a huge community of hobbyist makers with an incredible variety of skillsets. Maker Collab brings
+<h3 class="flow-text center">The place to meet other hobbyists to build & code your next project with!</h3>
+<p class="center">There is a huge community of hobbyists building projects with single board computers and a variety of software. Maker Collab brings
 this community closer, to enable collaboration on projects without the need to join an expensive ‘maker-space’.
 We leverage your proximity to other makers to help you find exciting things to work on together.</p>
+
+<div class="row">
+	<div class="col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+    <canvas id="myChart" width="100" height="100"></canvas>
+  </div>
+</div>
+
+<script>var projects = <%- JSON.stringify(projects) %>;</script> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+<script src="/js/chart.js"></script>

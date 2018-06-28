@@ -17,7 +17,7 @@ router.post('/filter', isLoggedIn, function(req, res) {
   db.tag.find({
     where: {tagName: req.body.tagFilter}
   }).then(function(tag) {
-  	if (tag) {
+  	if(tag) {
       tag.getProjects().then(function(projects) {
     	  var mapboxToken = process.env.MAPBOX;
         res.render('map/index', {projects: projects, mapboxToken: mapboxToken});
