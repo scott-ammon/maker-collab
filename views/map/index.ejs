@@ -1,4 +1,4 @@
-<form action="/map/filter" method="POST">
+<form action="/map/filter" method="POST" class="filter-map">
   <div class="row"> 
     <div class="form-group input-field col s8 l3 offset-l4">
       <select id="tagFilter" class="form-control" name="tagFilter">
@@ -16,6 +16,8 @@
         <option value="processing">Processing</option>
       </select>
     </div>
+    <input class="map-center" hidden type="text" name="mapC" value="">
+    <input class="map-zoom" hidden type="text" name="mapZ" value="">
     <div class="form-group input-field col s4 l2">
       <button class="btn blue" type="submit">Filter Map</button>
     </div>
@@ -37,6 +39,9 @@
 <script>
 	var projects = <%- JSON.stringify(projects) %>;
   var mapboxToken = <%- JSON.stringify(mapboxToken) %>;
+  var mapCenter = <%- JSON.stringify(mapCenter) %>;
+  var mapZoom = <%- JSON.stringify(mapZoom) %>;
 </script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/js/createMap.js"></script>
 

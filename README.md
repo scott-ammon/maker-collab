@@ -16,8 +16,6 @@ There are several websites today where people can post about their hobby electro
 
 #### RESTful routes:
 
-(work in progress)
-
 | Method | Path | Action |
 | ------ |------| -------|
 | GET | '/' | index - homepage of site |
@@ -60,7 +58,7 @@ I tracked progress with this [Trello Board](https://trello.com/b/pkgP40vV/ga-pro
 ### Challenges:
 #### Database setup
 
-I started the project with models for a user, profile, project, and tag. After establishing the associations between the models and writing initial routes it became clear that I was adding too many layers of associations in order to make my mapping functionality. I refactored by removing the profile model, and implementing the required data in the user and projects models instead. This greatly simplified the relationships, but allowed for the same amount of data to be entered.
+I started the project with models for a user, profile, project, and tag. After establishing the model associations I realized I was adding too many layers of associations in order to make my project mapping functionality. I refactored by removing the profile model, and implementing the required data in the user and projects models instead. This greatly simplified the relationships, but allowed for the same amount of data to be entered.
 
 #### Geocoding
 
