@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     userId: DataTypes.INTEGER
   }, {
     hooks: {
+      // geocode the project location so it can display on the map
       beforeCreate: function(project, options) {
         geocoder.geocode(project.location).then(function(res) {
           project.lat = res[0].latitude;
@@ -24,7 +25,8 @@ module.exports = (sequelize, DataTypes) => {
           console.log(err);
         });
       },
-      beforeBulkUpdate: function(project, options) {
+      // update location geocode when user edits project page
+      beforeSave: function(project, options) {
         geocoder.geocode(project.location).then(function(res) {
           project.lat = res[0].latitude;
           project.lng = res[0].longitude;
