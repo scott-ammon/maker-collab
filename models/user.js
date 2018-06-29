@@ -28,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
           msg: "Invalid password. Must be greater than 8 characters."
         }
       }
-    }
+    },
+    bio: DataTypes.TEXT
   }, {
     hooks: {
       beforeCreate: function(pendingUser, options) {
@@ -53,6 +54,5 @@ module.exports = (sequelize, DataTypes) => {
     delete userData.password;
     return userData;
   };
-
   return user;
 };

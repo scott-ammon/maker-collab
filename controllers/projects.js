@@ -96,13 +96,17 @@ router.put('/:id', isLoggedIn, function(req, res) {
   });
 });
 
-// DELETE - deletes a specific project
+// DELETE - deletes a specific project and associated projectsTags entry (but not the tag(s)!)
 router.delete('/:id', function(req, res) {
-	db.project.destroy({
-		where: {id: req.params.id}
-	}).then(function(data) {
+	db.projectsTags.destroy({
+    where: {projectId: req.params.id}
+  }).then(function(data) {
+    db.project.destroy({
+      where: {id: req.params.id}
+    });
+  }).then(function(data) {
     res.sendStatus(200);
-	});
+  });
 });
 
 router.get('/collab/:id', function(req, res) {

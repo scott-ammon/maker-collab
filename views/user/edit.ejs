@@ -1,0 +1,10 @@
+<h2><%= user.name %>'s Profile</h2>
+
+<form action="/user" method="POST" class="edit-form">
+  <div class="form-group">
+    <label for="bio">Bio</label>
+    <textarea id="bio" class="form-control" type="text" name="bio" value="<%= user.bio %>">
+    </textarea>
+  </div>
+  <button class="btn btn-primary right" type="submit">Save Bio</button>
+</form>

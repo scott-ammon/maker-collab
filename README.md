@@ -22,12 +22,12 @@ There are several sites today where people can post about their hobby maker proj
 | ------ |------| -------|
 | GET | '/' | index |
 | GET | '/auth/login' | new |
-| POST | '/auth/login' | ? |
+| POST | '/auth/login' | log in user |
 | GET | '/auth/signup' | new |
 | POST | '/auth/signup' | create |
-| GET | '/auth/logout' | ? |
+| GET | '/auth/logout' | log out user |
 | GET | '/map' | index |
-| POST | '/map/filter' | ? |
+| POST | '/map/filter' | filter map by tag |
 | GET | '/projects' | index |
 | GET | '/projects/new' | new |
 | POST | '/projects/' | create |

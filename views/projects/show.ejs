@@ -1,6 +1,6 @@
 <div class="display-box project-show">
   <h3><%= project.title %></h3>
-  <h5>Project Idea By: <%= user.name %></h5>
+  <h5>Project Idea By: <a href="/user/<%= user.id %>"><%= user.name %></a></h5>
   <p>Posted: <%= project.createdAt %></p>
   <p>Address: <%= project.location %></p>
   <p><%= project.description %></p>
