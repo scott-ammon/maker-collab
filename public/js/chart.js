@@ -16,7 +16,6 @@ tagArray.forEach(function(tag) {
   counts[tag.tagName] = 1 + (counts[tag.tagName] || 0);
 });
 
-
 var tagData = [];
 var colors = [];
 
@@ -44,7 +43,11 @@ type: 'doughnut',
   options: {
     legend: {
     	position: 'bottom',
-    	fontColor: '#fff'
+    	fontColor: '#fff',
+      labels: {
+        fontSize: 16,
+        fontColor: '#fff'
+      }
     }
   }
 });

@@ -1,4 +1,4 @@
-<div class="display-box">
+<div class="display-box project-show">
   <h3><%= project.title %></h3>
   <h5>Project Idea By: <%= user.name %></h5>
   <p>Posted: <%= project.createdAt %></p>
@@ -10,15 +10,17 @@
 
   <p>Tags:</p>
   <% project.tags.forEach(function(tag){ %> 
-    <p><%= tag.tagName %> </p>
+    <p class="tag"><%= tag.tagName %> </p>
   <% }); %>
 </div>
 
 <% if(currentUser !== user.id) { %>
-  <a class="btn blue right" href="mailto:<%= user.email %>?Subject=<%= project.title %> - Let's%20collaborate!">Collaborate!</a>
+  <a class="button-pair btn blue right" href="mailto:<%= user.email %>?Subject=<%= project.title %> - Let's%20collaborate!">Collaborate!</a>
 <% } else { %>
-  <a class="btn blue" href="/projects/<%= project.id %>/edit">Edit</a>&nbsp
-	<a class= "btn red delete" href="/projects/<%= project.id %>"><i class="material-icons">delete</i></a><br>
+  <div class="button-pair right">
+    <a class="btn blue" href="/projects/<%= project.id %>/edit">Edit</a>&nbsp
+	  <a class= "btn red delete" href="/projects/<%= project.id %>"><i class="material-icons">delete</i></a><br>
+	</div>
 <% } %>
 
 <!-- <script src="/js/app.js"></script> -->

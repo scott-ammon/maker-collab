@@ -88,7 +88,7 @@ router.put('/:id', isLoggedIn, function(req, res) {
     title: req.body.title,
     description: req.body.description,
     code: req.body.code,
-    lookingFor: req.body.lookingFor
+    location: req.body.location
   }, {
   	where: {id: req.params.id}
   }).then(function(result) {

@@ -1,7 +1,11 @@
-<h3 class="flow-text center">The place to meet other hobbyists to build & code your next project with!</h3>
-<p class="center">There is a huge community of hobbyists building projects with single board computers and a variety of software. Maker Collab brings
-this community closer, to enable collaboration on projects without the need to join an expensive ‘maker-space’.
-We leverage your proximity to other makers to help you find exciting things to work on together.</p>
+<% if(!currentUser) { %>
+  <h3 class="flow-text center">The place to meet other hobbyists to build & code your next project with!</h3>
+  <p class="center">There is a huge community of hobbyists building projects with single board computers and a variety of software. Maker Collab brings
+  this community closer, to enable collaboration on projects without the need to join an expensive ‘maker-space’.
+  We leverage your proximity to other makers to help you find exciting things to work on together.</p>
+<% } else { %> 
+  <h3 class="flow-text center">Hi <%= currentUser.name %>! What will you make today?</h3>
+<% } %>
 
 <div class="row">
 	<div class="col l8 offset-l2 m8 offset-m2 s10 offset-s1">

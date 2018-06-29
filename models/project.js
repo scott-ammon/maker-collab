@@ -23,6 +23,15 @@ module.exports = (sequelize, DataTypes) => {
         }).catch(function(err) {
           console.log(err);
         });
+      },
+      beforeBulkUpdate: function(project, options) {
+        geocoder.geocode(project.location).then(function(res) {
+          project.lat = res[0].latitude;
+          project.lng = res[0].longitude;
+          project.save();
+        }).catch(function(err) {
+          console.log(err);
+        });
       }
     }
   });

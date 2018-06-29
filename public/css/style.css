@@ -48,20 +48,44 @@ body {
 
 .edit-form,
 .display-box {
+	padding: 1em;
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 0.5em;
+}
+
+.project-show {
+  margin-top: 10vh;
 }
 
 label {
 	color: black;
 }
 
-.geocoder {
-  position:absolute;
-  z-index:1;
-  width:50%;
-  left:50%;
-  margin-left:-25%;
-  top:20px;
+.tag {
+	display: inline;
+	margin-right: 1em;
+	padding: 0.5em 1em;
+	background-color: #222;
+	border-radius: 3em;
+	color: white;
 }
+
+.button-pair {
+	margin-top: 1em;
+}
+
+.dropdown-content li>span {
+	color: black;
+}
+
+.dropdown-content {
+	border-radius: 1em;
+}
+
+input[type=text]:not(.browser-default):focus, 
+input[type=password]:not(.browser-default):focus, 
+input[type=email]:not(.browser-default):focus {
+	border-bottom-color: blue !important;
+}
+
 
