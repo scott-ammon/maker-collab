@@ -1,16 +1,20 @@
 <% if (alerts.error) { %>
 	<% alerts.error[0].split(',').forEach((msg) => { %>
+	<div class="alert-container">
     <div class="center chip red lighten-3"><%= msg%>
       <i class="close material-icons">close</i>
     </div>   
+  </div>
   <% }); %>
 <% } %>
 
 <% if (alerts.success) { %>
 	<% alerts.success[0].split(',').forEach((msg) => { %>
-    <div class="center chip green lighten-3"><%= msg%>
+	<div class="alert-container">
+    <div class="center chip white"><%= msg%>
       <i class="close material-icons">close</i>
     </div>
+  </div>
   <% }); %>
 <% } %>
 

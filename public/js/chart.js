@@ -18,13 +18,37 @@ tagArray.forEach(function(tag) {
 
 var tagData = [];
 var colors = [];
+var borders = [];
+
+var colorArray = ["rgba(191, 240, 212, 0.5)",
+                  "rgba(91, 97, 106, 0.5)",
+                  "rgba(0, 50, 73, 0.5)",
+                  "rgba(0, 126, 167, 0.5)",
+                  "rgba(128, 206, 215, 0.5)",
+                  "rgba(191, 240, 212, 0.5)",
+                  "rgba(91, 97, 106, 0.5)",
+                  "rgba(0, 50, 73, 0.5)",
+                  "rgba(0, 126, 167, 0.5)",
+                  "rgba(128, 206, 215, 0.5)",
+                  "rgba(191, 240, 212, 0.5)"];
+
+var borderArray = ["rgba(191, 240, 212, 1)",
+                    "rgba(91, 97, 106, 1)",
+                    "rgba(0, 50, 73, 1)",
+                    "rgba(0, 126, 167, 1)",
+                    "rgba(128, 206, 215, 1)",
+                    "rgba(191, 240, 212, 1)",
+                    "rgba(91, 97, 106, 1)",
+                    "rgba(0, 50, 73, 1)",
+                    "rgba(0, 126, 167, 1)",
+                    "rgba(128, 206, 215, 1)",
+                    "rgba(191, 240, 212, 1)"];
 
 // Make array of tag counts to graph, and random color for each tag
-Object.keys(counts).forEach(function(key) {
+Object.keys(counts).forEach(function(key, i) {
   tagData.push(counts[key]);
-  colors.push("rgba(" + Math.floor(Math.random() * (75-55) + 55) + "," +
-  											Math.floor(Math.random() * (255-170) + 170) + "," +
-  											Math.floor(Math.random() * (255-130) + 130) + ", 1)");
+  colors.push(colorArray[i]);
+  borders.push(borderArray[i]);
 });
 
 // Create chart and initialize with tag names and colors
@@ -34,8 +58,8 @@ type: 'doughnut',
     datasets: [{
       data: tagData,
       backgroundColor: colors,
-      borderColor: colors,
-      borderWidth: 1
+      borderColor: borders,
+      borderWidth: 2
     }],
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: Object.keys(counts)
@@ -46,7 +70,7 @@ type: 'doughnut',
     	fontColor: '#fff',
       labels: {
         fontSize: 16,
-        fontColor: '#fff'
+        fontColor: '#000'
       }
     }
   }

@@ -3,7 +3,8 @@ mapboxgl.accessToken = mapboxToken;
 // generate new Mapbox map and geocoder search bar
 var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/scottammon/cjit4mrto3t7j2rmsf423fo2u',
+        // style: 'mapbox://styles/scottammon/cjit4mrto3t7j2rmsf423fo2u',
+        style: 'mapbox://styles/scottammon/cjj1uc93w0qet2rsa2lyooqxk',
         center: [-98, 38],
         zoom: 4
       });
