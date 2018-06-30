@@ -1,17 +1,24 @@
+<h3 class="center"><%= project.title %></h3>
+
+  <% if(currentUser !== user.id) { %>
+    <h5 class="center">Idea By: <a class="username" href="/user/<%= user.id %>"><%= user.name %></a></h5>
+  <% } %>
 <div class="display-box project-show">
-  <h3><%= project.title %></h3>
-  <h5>Project Idea By: <a href="/user/<%= user.id %>"><%= user.name %></a></h5>
   <p>Posted: <%= project.createdAt %></p>
-  <p>Address: <%= project.location %></p>
+  <p>Project Location: <%= project.location %></p>
+  <h5>Description:</h5>
   <p><%= project.description %></p>
   <% if(project.code) { %>
        <pre class="prettyprint">><%= project.code %></pre>
-  <% } %>
+  <% } %><br>
 
-  <p>Tags:</p>
-  <% project.tags.forEach(function(tag){ %> 
-    <p class="tag"><%= tag.tagName %> </p>
-  <% }); %>
+  <div class="row">
+    <div class="col right">
+      <% project.tags.forEach(function(tag){ %> 
+        <p class="tag">#<%= tag.tagName %> </p>
+      <% }); %>
+    </div>
+  </div>
 </div>
 
 <% if(currentUser !== user.id) { %>
@@ -23,5 +30,4 @@
 	</div>
 <% } %>
 
-<!-- <script src="/js/app.js"></script> -->
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst""></script>

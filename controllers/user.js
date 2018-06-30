@@ -15,6 +15,7 @@ router.get('/', isLoggedIn, function(req, res) {
 // GET - get form for editing user bio
 router.get('/edit', isLoggedIn, function(req, res) {
 	db.user.findById(req.user.id).then(function(user) {
+		console.log(user.bio);
 		res.render('user/edit', {user: user});
 	});
 });

@@ -73,22 +73,19 @@ ul.list {
 	color: black;
 }
 
-.edit-form,
-.display-box {
+.display-box,
+.bio {
 	padding: 1em;
 	background-color: rgba(255, 255, 255, 0.75);
 	border-radius: 0.5em;
-	box-shadow: 2px 5px 8px #222;
+}
+
+.display-box {
+  box-shadow: 2px 5px 8px #222;
 }
 
 .project-show {
   margin-top: 10vh;
-}
-
-.bio {
-  padding: 1em;
-	background-color: rgba(255, 255, 255, 0.75);
-	border-radius: 0.5em;
 }
 
 .project {
@@ -109,8 +106,8 @@ label {
 	display: inline;
 	margin-right: 1em;
 	padding: 0.5em 1em;
-	background-color: #222;
-	border-radius: 3em;
+	background-color: black;
+	border-radius: 0.5em;
 	color: white;
 }
 
@@ -132,7 +129,8 @@ input[type=email]:not(.browser-default):focus {
 	border-bottom-color: blue !important;
 }
 
-.project-count {
+.project-count,
+.username {
 	background-color: rgba(255, 255, 255, 0.75);
 	border-radius: 1em;
 	padding-left: 1em;
@@ -143,3 +141,6 @@ input[type=email]:not(.browser-default):focus {
 	text-align: justify;
 }
 
+.inline {
+	display: inline;
+}

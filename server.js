@@ -16,6 +16,7 @@ app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public/'));
 app.use(ejsLayouts);
+// pull out scripts from ejs files and append to bottom of layout.ejs with <%- script %>
 // app.set('layout extractScripts', true);
 
 // 1. This needs to come before you app.use passport

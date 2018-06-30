@@ -1,10 +1,17 @@
-<h2><%= user.name %>'s Profile</h2>
+<h2 class="center"><%= user.name %>'s Profile</h2>
 
-<form action="/user" method="POST" class="edit-form">
-  <div class="form-group">
-    <label for="bio">Bio</label>
-    <textarea id="bio" class="form-control" type="text" name="bio" value="<%= user.bio %>">
-    </textarea>
-  </div>
-  <button class="btn btn-primary right" type="submit">Save Bio</button>
-</form>
+<div class="row">
+	<div class="col l8 offset-l2 m6 offset-m3 s12 display-box">
+		<form action="/user" method="POST" class="edit-form">
+  		<div class="form-group">
+   		  <label for="bio">Bio</label>
+   		  <textarea id="bio" class="form-control text-bio" type="text" name="bio" value="<%= user.bio %>"></textarea>
+    	  <button class="btn btn-primary blue right" type="submit">Save Bio</button>
+  		</div>
+		</form>
+	</div>
+</div>
+
+<script>var userData = <%- JSON.stringify(user) %>; </script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/js/textAreas.js"></script>
