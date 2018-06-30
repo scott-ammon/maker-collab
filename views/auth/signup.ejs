@@ -1,31 +1,32 @@
-<div class="signup row">
-  <div class="col offset-l2 l4 m6 s6 grey lighten-4 signup-box">
-    <h5>Find your next project!</h5>
-    <p>Maker-Collab can help you:</p>
-    <ul>
-      <li>Find projects near you</li>
-      <li>List your expertise so other makers can find you</li>
-      <li>Post a project idea</li>
-    </ul>
+<div class="rows signup">
+  <div class="signup-box">
+    <div class="flex site-description">
+      <h5>Find your next project with us!</h5>
+      <h6>Maker-Collab can help you:</h6>
+      <ul class="list">
+        <li>Find hobby electronics projects near you</li><br>
+        <li>List your expertise so other makers can find you</li><br>
+        <li>Post a project idea</li>
+      </ul>
+    </div>
+    <div class="flex">
+      <form action="/auth/signup" method="POST">
+        <div class="form-group">
+          <label for="authEmail">Email</label>
+          <input id="authEmail" class="input-field" type="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="authName">Name</label>
+          <input id="authName" class="input-field" type="text" name="name">
+        </div>
+        <div class="form-group">
+          <label for="authPassword">Password</label>
+          <input id="authPassword" class="input-field" type="password" name="password">
+       </div>
+       <br>
+       <input class="btn blue btn-primary right" type="submit">
+      </form>
+    </div>
   </div>
-  <div class="col l4 m6 s6 white signup-box">
-    <form action="/auth/signup" method="POST">
-      <div class="form-group">
-        <label for="authEmail">Email</label>
-        <input id="authEmail" class="input-field" type="email" name="email">
-      </div>
-      <div class="form-group">
-        <label for="authName">Name</label>
-        <input id="authName" class="input-field" type="text" name="name">
-      </div>
-      <div class="form-group">
-        <label for="authPassword">Password</label>
-        <input id="authPassword" class="input-field" type="password" name="password">
-     </div>
-     <br>
-     <input class="btn blue btn-primary right" type="submit">
-    </form>
-  </div>
-</div>
 </div>
 

@@ -11,6 +11,8 @@ router.get('/', isLoggedIn, function(req, res) {
   }).then(function(projects) {
       var mapboxToken = process.env.MAPBOX;
       res.render('map/index', {projects: projects, mapboxToken: mapboxToken});
+    }).catch(function(err) {
+      console.log("Error: Unable to load projects.");
     });
 });
 

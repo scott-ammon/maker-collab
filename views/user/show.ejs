@@ -1,4 +1,4 @@
-<h2><%= user.name %>'s Profile</h2>
+<h2 class="center"><%= user.name %>'s Profile</h2>
 
 <h3>Bio:</h3>
 <p><%= user.bio %></p>
@@ -7,7 +7,7 @@
 
   <!-- add forEach here to loop through existing projects -->
   <% projects.forEach(function(project) { %>
-    <div class="display-box col s12 l12">
+    <div class="project-bar project col s12 l12">
   	  <a class="primary-anchor" href="/projects/<%= project.id %>"><%= project.title %></a>
     </div><br>
   <% }); %>

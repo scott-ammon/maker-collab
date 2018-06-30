@@ -1,7 +1,8 @@
 <div class="row">
-  <div class="col s12 m6 offset-m3 l4 offset-l4">
-  	<h3 class="center">Sign In</h3>
-    <form class="display-box" action="/auth/login" method="POST">
+	<h3 class="center sign-in">Sign In</h3>
+  <div class="col s12 m6 offset-m3 l6 offset-l3 display-box">
+  	
+    <form action="/auth/login" method="POST">
       <div class="form-group">
         <label for="authEmail">Email</label>
         <input id="authEmail" class="form-control" type="email" name="email">
@@ -12,9 +13,13 @@
         <input id="authPassword" class="form-control" type="password" name="password">
       </div>
 
-      <input class="btn btn-primary right" type="submit">
+      <input class="btn btn-primary blue right" type="submit">
     </form>
      <br>
-    <a href="/auth/signup">Not a member? Sign up!</a>
   </div>
+  
+</div>
+
+<div class="row">
+	<a class="col s12 m6 offset-m3 l6 offset-l3 center black-text" href="/auth/signup">Not a member? Sign up!</a>
 </div>

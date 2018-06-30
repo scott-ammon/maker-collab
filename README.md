@@ -62,7 +62,11 @@ I started the project with models for a user, profile, project, and tag. After e
 
 #### Geocoding
 
-In order to map project locations, I needed to add a sequelize hook with a geocoder to take the user's location string and convert to latitude/longitude. I initially used the node module called geocoder, but ran into issues with it being asynchronous. The database would create the table entry, but would crash the app because it couldn't read the geometry data as geocoder hadn't finished running. After some digging, I found 'node-geocoder', another node module that implements geocoding with promises, allowing for the locations to be grabbed before completing the database entry, and logging an error if no lat/lng was found.
+In order to map project locations, I needed to add a sequelize hook with a geocoder to take the user's location string and convert to latitude/longitude. I initially used the node module called geocoder, but ran into issues with it being asynchronous. The database would create the table entry, but would crash the app because it couldn't read the geometry data as geocoder hadn't finished running. After some digging, I found 'node-geocoder', another node module that implements geocoding with promises, allowing for better handling of the asynchronous behavior, and logging an error if no lat/lng was found rather than crashing the app.
+
+#### Filtering the Map
+
+For users to see only select projects on the map, I added a filter drop down that shows the possible tags that projects may contain. The issue was each time a filter was chosen, the page refreshed and did not maintain the current map state. In order to get around this, I initially tried passing back the current map center and zoom levels as hidden inputs in the HTML form data, and then passing them to the front again on page refresh. There had to be a more efficient way... I realized that by intercepting the post route on the front end, all I had to do was grab the filtered project data from the database, erase the existing map markers and plot the new projects by sending JSON data back from the server-side post route. This greatly simplified the code and made for a better user experience as the page does not reload, and the map stays centered where the user was exploring.
 
 ### Front End Styling
 

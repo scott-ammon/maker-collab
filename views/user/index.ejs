@@ -1,19 +1,14 @@
-<h2>Your Profile</h2>
+<h2 class="center">Your Profile</h2>
+<h3>Bio</h3>
+<p class="bio"><%= user.bio %></p>
+<a href="/user/edit" class="btn btn-primary right">Edit Bio</a><br><br>
+<h3>Projects</h3>
 
-<h3>Bio:</h3>
-<p><%= user.bio %></p>
-<a href="/user/edit" class="btn btn-primary right">Edit Bio</a>
-
-<h3>Projects:</h3>
-
-<!-- <div class="row"> -->
-  <!-- add forEach here to loop through existing projects -->
-  <% projects.forEach(function(project) { %>
-    <div class="display-box col s12 l12">
-  	  <a class="primary-anchor" href="/projects/<%= project.id %>"><%= project.title %></a>
-    </div><br>
-  <% }); %>
-<!-- </div> -->
+<% projects.forEach(function(project) { %>
+  <div class="project-bar project col s12 l12">
+  	<a class="primary-anchor" href="/projects/<%= project.id %>"><%= project.title %></a>
+  </div><br>
+<% }); %>
 
 <a href="/projects/new" class="btn btn-primary right">Add Project</a>
 

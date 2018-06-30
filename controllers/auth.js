@@ -27,11 +27,11 @@ router.post('/signup', function(req, res) {
       // No record was found, so we created one
       passport.authenticate('local', {
         successRedirect: '/user',
-        successFlash: 'Account created and logged in!'
+        successFlash: 'Account created, welcome to Maker-Collab!'
       })(req, res);
     } else {
       // We found a record, so they can't use that email
-      req.flash('error', 'An account with this email already exists');
+      req.flash('error', 'An account with this email already exists.');
       res.redirect('/auth/signup');
     }
   }).catch(function(error) {
@@ -46,8 +46,8 @@ router.post('/signup', function(req, res) {
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/auth/login',
-  successFlash: 'You have logged in!',
-  failureFlash: 'Invalid username and/or password!'
+  successFlash: 'Logged in. Welcome back to Maker-Collab!',
+  failureFlash: 'Invalid username and/or password'
 }));
 
 // GET /auth/logout - the route that logs you out

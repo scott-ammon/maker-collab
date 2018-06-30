@@ -18,18 +18,49 @@ body {
 	font-family: "Hammersmith One", sans-serif;
 }
 
-.signup {
+/* SIGNUP PAGE SPECIFIC STYLES */
+
+.signup,
+.sign-in {
 	margin-top: 20vh;
 }
+
+.signup-box {
+	display: flex;
+	align-items: start;
+	justify-content: space-between;
+	border-radius: 1em;
+	box-shadow: 2px 5px 8px #222;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.flex {
+	margin: 1em;
+	padding: 1em;
+	width: 50%;
+}
+
+ul.list {
+	list-style-type: circle;
+}
+
+@media (max-width: 600px) {
+  signup-box {
+    flex-direction: column;
+  }
+  .site-description {
+	  display: none;
+  }
+  .flex {
+	  width: 100%;
+  }
+}
+
+/**/
 
 .transparent-bg {
 	background-color: rgba(0, 0, 0, 0);
 	box-shadow: none;
-}
-
-.signup-box {
-	height: 30vh;
-	border-radius: 10px;
 }
 
 .btn {
@@ -42,19 +73,32 @@ body {
 	color: black;
 }
 
-.primary-anchor:hover {
-  color: blue;
-}
-
 .edit-form,
 .display-box {
 	padding: 1em;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.75);
 	border-radius: 0.5em;
+	box-shadow: 2px 5px 8px #222;
 }
 
 .project-show {
   margin-top: 10vh;
+}
+
+.bio {
+  padding: 1em;
+	background-color: rgba(255, 255, 255, 0.75);
+	border-radius: 0.5em;
+}
+
+.project {
+  padding: 1em;
+	border-radius: 0.5em;
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.project:hover {
+	box-shadow: 2px 5px 8px #222;
 }
 
 label {
@@ -88,4 +132,14 @@ input[type=email]:not(.browser-default):focus {
 	border-bottom-color: blue !important;
 }
 
+.project-count {
+	background-color: rgba(255, 255, 255, 0.75);
+	border-radius: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.justify {
+	text-align: justify;
+}
 
