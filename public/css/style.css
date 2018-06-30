@@ -18,6 +18,7 @@ h3 {
 
 .brand-logo {
 	font-family: "Hammersmith One", sans-serif;
+	margin-left: 0.5em;
 }
 
 /* SIGNUP PAGE SPECIFIC STYLES */
@@ -55,6 +56,9 @@ ul.list {
   }
   .flex {
 	  width: 100%;
+  }
+  .brand-logo {
+  	margin-left: 0;
   }
 }
 
