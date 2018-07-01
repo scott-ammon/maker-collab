@@ -61,7 +61,7 @@ As a hobbyist, I want to share hardware & software with others near me so we can
 
 I drew preliminary sketches in Adobe XD to plan out the main pages with interactivity. This helped me narrow down the routes that would have to be created to display the relevant pages.
 
-![wireframe](public/img/project2-wireframes.png?raw=true)
+![wireframe](img/project2-wireframes.png?raw=true)
 
 ### Project Tracking
 
