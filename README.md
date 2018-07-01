@@ -1,18 +1,20 @@
 # Maker-Collab
 
-### This full stack web application was developed with:
-* JavaScript
-* jQuery
-* Node.js
-* Express
-* Materialize
-* HTML
-* CSS
-
 ### Description
 There are several websites today where people can post about their hobby electronics projects with single board computers, but they are just that - a post describing a project typically worked on by one person. Maker-Collab aims to connect makers to work collaboratively on their projects, which helps people build new skills, share hardware and software resources, and build cool stuff! Users post project ideas to their profile, and other users can find projects in their area, and reach out to the project idea creator to collaborate.
 
 ### Project Structure
+
+#### This web application was developed with:
+* JavaScript
+* jQuery
+* Node.js
+* Express
+* Chart.js
+* Mapbox GL JS
+* Materialize
+* HTML
+* CSS
 
 #### RESTful routes:
 
@@ -40,13 +42,26 @@ There are several websites today where people can post about their hobby electro
 
 | Model | Schema | Relationship(s) |
 | ----- |--------| ----------------|
-| User | name:string, email:strin, password:string,bio:text | has one Profile |
-| Projects | title:string,description:text,location:string,lat:float,lng:float,userId:integer | belongsTo User, hasMany Tags |
-| Tags | tagName:string | belongsToMany Projects |
+| User | name:string, email:string, password:string, bio:text | has one Profile, hasMany Projects |
+| Projects | title:string, description:text, location:string, lat:float, lng:float, userId:integer | hasMany Tags |
+| Tags | tagName:string | hasMany Projects |
 
 ### User Stories
 
+Some sample cases that helped develop the framework of the site:
+
+As a hobbyist, I want to be able to find other hobbyists near me that can help me with my hardware & software questions.
+
+As a developer, I want to find others who have hardware experience to help me build out my project ideas.
+
+As a hobbyist, I want to share hardware & software with others near me so we can build more complex projects without the upfront cost.
+
+
 ### Wireframing
+
+I drew preliminary sketches in Adobe XD to plan out the main pages with interactivity. This helped me narrow down the routes that would have to be created to display the relevant pages.
+
+![wireframe](public/img/project2-wireframes.png?raw=true)
 
 ### Project Tracking
 
@@ -72,10 +87,17 @@ For users to see only select projects on the map, I added a filter drop down tha
 
 I decided to implement Materialize for it's great JavaScript components. I'm not the biggest fan of Material Design, but this is a great framework for getting a site running quickly with user friendly interfaces. For my next project I'd like to dig into UIKit which I think has better user interface components (and more of them), but requires more CSS to tailor to your personal style. 
 
-Color Palette:
-
+I tried to keep the pages as clean as possible without conflicting colors, but would like to improve the overall appearance as a next step. I think there are too many font sizes and conflicting headings that prevent it from looking as professional as I'd like.
 
 ### Result and Next Steps
 
 Future items i'd like to implement are:
+
+* In-app message feature between users to collaborate, as sending emails freely is not an appropriate method for a public site unless they're masked in some way (e.g. Craigslist)
+* Add ability to save your favorite project ideas to your profile
+* Add page for completed projects for users to show off what they built by collaborating, which would demonstrate the capability of the site
+* Add multiple separate filter selectors on map page to filter by hardware, software, and other categories simultaneously
+
+
+
 

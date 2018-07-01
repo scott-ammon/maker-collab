@@ -1,7 +1,9 @@
 body {
 	height: 100vh;
 	/*background: linear-gradient(to bottom right, #00c6ff, #0072ff);*/
-	background: linear-gradient(to bottom right, #007991, #78ffd6);
+	/*background: #17c37b;*/
+	background: #f9f7e8;
+	/*background: linear-gradient(to bottom right, #007991, #78ffd6);*/
 	font-family: "Raleway", sans-serif;
 }
 
@@ -13,12 +15,19 @@ body {
 h2,
 h3 {
   font-weight: 700;
-  color: white;
+  color: #61bfad;
 }
 
-.brand-logo {
-	font-family: "Hammersmith One", sans-serif;
+nav .brand-logo {
+	/*font-family: "Hammersmith One", sans-serif;*/
+	font-weight: 700;
 	margin-left: 0.5em;
+	color: #61bfad;
+}
+
+nav ul a {
+	color: #61bfad;
+	font-weight: 700;
 }
 
 /* SIGNUP PAGE SPECIFIC STYLES */
@@ -139,8 +148,10 @@ input[type=email]:not(.browser-default):focus {
 .username {
 	background-color: rgba(255, 255, 255, 0.75);
 	border-radius: 1em;
-	padding-left: 1em;
-	padding-right: 1em;
+	padding-left: .5em;
+	padding-right: .5em;
+	padding-bottom: .25em;
+	color: black;
 }
 
 .justify {
