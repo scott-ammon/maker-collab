@@ -87,7 +87,7 @@ For users to see only select projects on the map, I added a filter drop down tha
 
 I decided to implement Materialize for it's great JavaScript components. I'm not the biggest fan of Material Design, but this is a great framework for getting a site running quickly with user friendly interfaces. For my next project I'd like to dig into UIKit which I think has better user interface components (and more of them), but requires more CSS to tailor to your personal style. 
 
-I tried to keep the pages as clean as possible without conflicting colors, but would like to improve the overall appearance as a next step. I think there are too many font sizes and conflicting headings that prevent it from looking as professional as I'd like.
+I tried to keep the pages as clean as possible without conflicting colors, but would like to improve the overall appearance as a next step. I think there are too many varying font sizes and headings that prevent it from looking as professional as I'd like it to!
 
 ### Result and Next Steps
 

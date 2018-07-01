@@ -1,9 +1,8 @@
 body {
 	height: 100vh;
-	/*background: linear-gradient(to bottom right, #00c6ff, #0072ff);*/
+	background: linear-gradient(to top, #00c6ff, #0072ff);
 	/*background: #17c37b;*/
-	background: #f9f7e8;
-	/*background: linear-gradient(to bottom right, #007991, #78ffd6);*/
+	/*background: #f9f7e8;*/
 	font-family: "Raleway", sans-serif;
 }
 
@@ -19,9 +18,7 @@ h3 {
 }
 
 nav .brand-logo {
-	/*font-family: "Hammersmith One", sans-serif;*/
 	font-weight: 700;
-	margin-left: 0.5em;
 	color: #61bfad;
 }
 
@@ -56,22 +53,10 @@ ul.list {
 	list-style-type: circle;
 }
 
-@media (max-width: 600px) {
-  signup-box {
-    flex-direction: column;
-  }
-  .site-description {
-	  display: none;
-  }
-  .flex {
-	  width: 100%;
-  }
-  .brand-logo {
-  	margin-left: 0;
-  }
+.primary-anchor {
+	font-size: 26px;
+	color: black;
 }
-
-/**/
 
 .transparent-bg {
 	background-color: rgba(0, 0, 0, 0);
@@ -81,11 +66,6 @@ ul.list {
 .btn {
 	border-radius: 3em;
   margin-bottom: 10px;
-}
-
-.primary-anchor {
-	font-size: 26px;
-	color: black;
 }
 
 .display-box,
@@ -165,4 +145,32 @@ input[type=email]:not(.browser-default):focus {
 .alert-container {
 	width: 100%;
   text-align: center;
+}
+
+nav .sidenav-trigger i {
+	color: black;
+}
+
+@media (max-width: 600px) {
+  signup-box {
+    flex-direction: column;
+  }
+  .site-description {
+	  display: none;
+  }
+  .flex {
+	  width: 100%;
+  }
+  .brand-logo {
+  	margin-left: 0;
+  }
+  h2 {
+  	font-size: 36px;
+  }
+  h3 {
+  	font-size: 24px;
+  }
+  .primary-anchor {
+  	font-size: 16px;
+  }
 }

@@ -1,106 +1,102 @@
 <h2>Add a New Project:</h2>
 
 <div class="row">
-<div class="col l12 display-box">
+  <div class="col l12 display-box">
+    <form action="/projects" method="POST">
+      <div class="form-group">
+        <label for="proj-title">Project Title</label>
+        <input id="proj-title" class="form-control" type="text" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" class="form-control" type="text" name="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="code">Code Snippets</label>
+        <textarea id="code" class="form-control" type="text" name="code"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="location">Address</label>
+        <input id="location" class="form-control" type="text" name="location">
+      </div>
 
-<form action="/projects" method="POST">
-  <div class="form-group">
-    <label for="proj-title">Project Title</label>
-    <input id="proj-title" class="form-control" type="text" name="title" required>
-  </div>
-
-  <div class="form-group">
-    <label for="description">Description</label>
-    <textarea id="description" class="form-control" type="text" name="description" required></textarea>
-  </div>
-
-  <div class="form-group">
-    <label for="code">Code Snippets</label>
-    <textarea id="code" class="form-control" type="text" name="code"></textarea>
-  </div>
-   
-   <div class="form-group">
-    <label for="location">Address</label>
-    <input id="location" class="form-control" type="text" name="location">
-  </div>
-
-  <div class="row">
-    <div class="col s12 l2">
-      <p>Hardware:</p>
-      <p class="checkboxes">
-        <label>
-          <input type="checkbox" id="arduino" name="arduinoTag" value="arduino" />
-          <span>Arduino</span>
-        </label>
-      </p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="raspberry-pi" name="rpiTag" value="raspberry-pi" />
-        <span>Raspberry Pi</span>
-      </label>
-    </p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="intel" name="intelTag" value="intel-edison" />
-        <span>Intel Edison</span>
-      </label>
-    </p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="asus" name="asusTag" value="asus-tinker" />
-       <span>ASUS Tinker Board</span>
-     </label>
-    </p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="odroid" name="odroidTag" value="odroid" />
-        <span>Odroid</span>
-      </label>
-    </p>
-  </div>
-
-  <div class="col s12 l2">
-    <p>Software:</p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="js" name="jsTag" value="javascript" />
-        <span>JavaScript</span>
-      </label>
-    </p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="python" name="pyTag" value="python" />
-        <span>Python</span>
-      </label>
-    </p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="java" name="javaTag" value="java" />
-        <span>Java</span>
-      </label>
-    </p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="c++" name="cTag" value="c++" />
-        <span>C++</span>
-      </label>
-    </p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="ruby" name="rubyTag" value="ruby" />
-        <span>Ruby</span>
-      </label>
-    </p>
-    <p class="checkboxes">
-      <label>
-        <input type="checkbox" id="processing" name="pTag" value="processing" />
-        <span>Processing</span>
-      </label>
-    </p>
+      <div class="row">
+        <div class="col s12 l2">
+          <p>Hardware:</p>
+          <p class="checkboxes">
+            <label>
+              <input type="checkbox" id="arduino" name="arduinoTag" value="arduino" />
+              <span>Arduino</span>
+            </label>
+          </p>
+          <p class="checkboxes">
+            <label>
+             <input type="checkbox" id="raspberry-pi" name="rpiTag" value="raspberry-pi" />
+             <span>Raspberry Pi</span>
+            </label>
+          </p>
+          <p class="checkboxes">
+            <label>
+              <input type="checkbox" id="intel" name="intelTag" value="intel-edison" />
+              <span>Intel Edison</span>
+            </label>
+          </p>
+          <p class="checkboxes">
+            <label>
+              <input type="checkbox" id="asus" name="asusTag" value="asus-tinker" />
+              <span>ASUS Tinker Board</span>
+            </label>
+          </p>
+          <p class="checkboxes">
+            <label>
+              <input type="checkbox" id="odroid" name="odroidTag" value="odroid" />
+              <span>Odroid</span>
+            </label>
+          </p>
+        </div>
+      <div class="col s12 l2">
+        <p>Software:</p>
+        <p class="checkboxes">
+          <label>
+            <input type="checkbox" id="js" name="jsTag" value="javascript" />
+            <span>JavaScript</span>
+          </label>
+        </p>
+        <p class="checkboxes">
+          <label>
+            <input type="checkbox" id="python" name="pyTag" value="python" />
+            <span>Python</span>
+          </label>
+        </p>
+        <p class="checkboxes">
+          <label>
+            <input type="checkbox" id="java" name="javaTag" value="java" />
+            <span>Java</span>
+          </label>
+        </p>
+        <p class="checkboxes">
+          <label>
+            <input type="checkbox" id="c++" name="cTag" value="c++" />
+            <span>C++</span>
+          </label>
+        </p>
+        <p class="checkboxes">
+          <label>
+            <input type="checkbox" id="ruby" name="rubyTag" value="ruby" />
+            <span>Ruby</span>
+          </label>
+        </p>
+        <p class="checkboxes">
+          <label>
+            <input type="checkbox" id="processing" name="pTag" value="processing" />
+            <span>Processing</span>
+          </label>
+        </p>
+      </div>
+    </div>
+    <button class="btn btn-primary right" type="submit">Post Project</button>
+    </form>
   </div>
 </div>
-  <button class="btn btn-primary right" type="submit">Post Project</button>
-</form>
 
-</div>
-</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

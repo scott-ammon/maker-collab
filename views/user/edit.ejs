@@ -5,7 +5,7 @@
 		<form action="/user" method="POST" class="edit-form">
   		<div class="form-group">
    		  <label for="bio">Bio</label>
-   		  <textarea id="bio" class="form-control text-bio" type="text" name="bio" value="<%= user.bio %>"></textarea>
+   		  <textarea id="bio" class="form-control text-bio" type="text" name="bio"></textarea>
     	  <button class="btn btn-primary right" type="submit">Save Bio</button>
   		</div>
 		</form>
@@ -14,4 +14,4 @@
 
 <script>var userData = <%- JSON.stringify(user) %>; </script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/js/textAreas.js"></script>
+<script src="/js/userEdit.js"></script>

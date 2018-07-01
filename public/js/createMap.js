@@ -14,6 +14,7 @@ var map = new mapboxgl.Map({
         accessToken: mapboxgl.accessToken
       }));
 
+// empty array to hold each mapboxgl marker so I can clear them for filtering
 var markerArray = [];
 
 // add all projects to map on main get route to '/map'
