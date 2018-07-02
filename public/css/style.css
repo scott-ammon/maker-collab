@@ -1,8 +1,6 @@
 body {
 	height: 100vh;
-	background: linear-gradient(to top, #00c6ff, #0072ff);
-	/*background: #17c37b;*/
-	/*background: #f9f7e8;*/
+	background: #f9f7e8;
 	font-family: "Raleway", sans-serif;
 }
 
@@ -19,6 +17,7 @@ h3 {
 
 nav .brand-logo {
 	font-weight: 700;
+	margin-left: 0.5em;
 	color: #61bfad;
 }
 
@@ -71,7 +70,7 @@ ul.list {
 .display-box,
 .bio {
 	padding: 1em;
-	background-color: rgba(255, 255, 255, 0.75);
+	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 0.5em;
 }
 
@@ -118,6 +117,7 @@ label {
 	border-radius: 1em;
 }
 
+/* Overwrite Materialize defaults for input bottom borders */
 input[type=text]:not(.browser-default):focus, 
 input[type=password]:not(.browser-default):focus, 
 input[type=email]:not(.browser-default):focus {
@@ -151,6 +151,7 @@ nav .sidenav-trigger i {
 	color: black;
 }
 
+/* Media queries to handle where I've overwritten Materialize behaviors */
 @media (max-width: 600px) {
   signup-box {
     flex-direction: column;
@@ -161,8 +162,8 @@ nav .sidenav-trigger i {
   .flex {
 	  width: 100%;
   }
-  .brand-logo {
-  	margin-left: 0;
+  nav .brand-logo {
+	  margin-left: 0;
   }
   h2 {
   	font-size: 36px;

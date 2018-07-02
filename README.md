@@ -67,9 +67,6 @@ I drew preliminary sketches in Adobe XD to plan out the main pages with interact
 
 I tracked progress with this [Trello Board](https://trello.com/b/pkgP40vV/ga-project-2)
 
-### Minimum Viable Product (MVP)
-
-
 ### Challenges:
 #### Database setup
 

@@ -1,14 +1,12 @@
 <h2 class="center"><%= user.name %>'s Profile</h2>
-
 <h3>Bio:</h3>
 <p class="bio"><%= user.bio %></p>
-
 <h3>Projects:</h3>
 
   <!-- add forEach here to loop through existing projects -->
   <% projects.forEach(function(project) { %>
     <div class="project-bar project col s12 l12">
-  	  <a class="primary-anchor" href="/projects/<%= project.id %>"><%= project.title %></a>
+      <a class="primary-anchor" href="/projects/<%= project.id %>"><%= project.title %></a>
     </div><br>
   <% }); %>
 

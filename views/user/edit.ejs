@@ -1,15 +1,14 @@
 <h2 class="center"><%= user.name %>'s Profile</h2>
-
 <div class="row">
-	<div class="col l8 offset-l2 m6 offset-m3 s12 display-box">
-		<form action="/user" method="POST" class="edit-form">
-  		<div class="form-group">
-   		  <label for="bio">Bio</label>
-   		  <textarea id="bio" class="form-control text-bio" type="text" name="bio"></textarea>
-    	  <button class="btn btn-primary right" type="submit">Save Bio</button>
-  		</div>
-		</form>
-	</div>
+  <div class="col l8 offset-l2 m6 offset-m3 s12 display-box">
+    <form action="/user" method="POST" class="edit-form">
+      <div class="form-group">
+        <label for="bio">Bio</label>
+        <textarea id="bio" class="form-control text-bio" type="text" name="bio"></textarea>
+        <button class="btn btn-primary right" type="submit">Save Bio</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script>var userData = <%- JSON.stringify(user) %>; </script>
