@@ -46,7 +46,7 @@ There are several websites today where people can post about their hobby electro
 
 | Model | Schema | Relationship(s) |
 | ----- |--------| ----------------|
-| User | name:string, email:string, password:string, bio:text | has one Profile, hasMany Projects |
+| User | name:string, email:string, password:string, bio:text | hasMany Projects |
 | Projects | title:string, description:text, location:string, lat:float, lng:float, userId:integer | hasMany Tags |
 | Tags | tagName:string | hasMany Projects |
 
