@@ -2,6 +2,8 @@
 
 Live site: https://maker-collab.herokuapp.com/
 
+![main-page](/public/img/main-page.png?raw=true)
+
 ### Description
 There are several websites today where people can post about their hobby electronics projects with single board computers, but they are just that - a post describing a project typically worked on by one person. Maker-Collab aims to connect makers to work collaboratively on their projects, which helps people build new skills, share hardware and software resources, and build cool stuff! Users post project ideas to their profile, and other users can find projects in their area, and reach out to the project idea creator to collaborate.
 
