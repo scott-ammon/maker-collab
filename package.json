@@ -8,7 +8,7 @@
     "lint:css": "node_modules/csslint/cli.js public/css/; exit 0",
     "test": "NODE_ENV=test node_modules/mocha/bin/mocha",
     "start": "node index.js"
-  }, 
+  },
   "author": "Scott Ammon",
   "license": "ISC",
   "devDependencies": {
