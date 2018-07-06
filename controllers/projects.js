@@ -21,16 +21,16 @@ router.post('/', isLoggedIn, function(req, res) {
 
       // array of checkbox values for hardware + software tags
       var checkboxArr = [req.body.arduinoTag,
-      								   req.body.rpiTag,
-      					    	   req.body.intelTag,
-      					    	   req.body.rpiTag,
-      					    	   req.body.asusTag,
-      					    	   req.body.odroidTag,
-      					    	   req.body.jsTag,
-      					    	   req.body.pyTag,
-      					    	   req.body.javaTag,
-      					    	   req.body.cTag,
-      					    	   req.body.rubyTag];
+                         req.body.rpiTag,
+                         req.body.intelTag,
+                         req.body.rpiTag,
+                         req.body.asusTag,
+                         req.body.odroidTag,
+                         req.body.jsTag,
+                         req.body.pyTag,
+                         req.body.javaTag,
+                         req.body.cTag,
+                         req.body.rubyTag];
       var tagArray = [];
 
       // only push tags that are checked
@@ -108,9 +108,5 @@ router.delete('/:id', function(req, res) {
     res.sendStatus(200);
   });
 });
-
-router.get('/collab/:id', function(req, res) {
-  
-})
 
 module.exports = router;
