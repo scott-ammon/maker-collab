@@ -26,8 +26,6 @@ nav ul a {
   font-weight: 700;
 }
 
-/* SIGNUP PAGE SPECIFIC STYLES */
-
 .signup,
 .sign-in {
   margin-top: 20vh;
@@ -117,13 +115,6 @@ label {
   border-radius: 1em;
 }
 
-/* Overwrite Materialize defaults for input bottom borders */
-input[type=text]:not(.browser-default):focus, 
-input[type=password]:not(.browser-default):focus, 
-input[type=email]:not(.browser-default):focus {
-  border-bottom-color: blue !important;
-}
-
 .project-count,
 .username {
   background-color: rgba(255, 255, 255, 0.75);
@@ -149,6 +140,13 @@ input[type=email]:not(.browser-default):focus {
 
 nav .sidenav-trigger i {
   color: black;
+}
+
+/* Overwrite Materialize defaults for input bottom borders */
+input[type=text]:not(.browser-default):focus, 
+input[type=password]:not(.browser-default):focus, 
+input[type=email]:not(.browser-default):focus {
+  border-bottom-color: blue !important;
 }
 
 /* Media queries to handle where I've overwritten Materialize behaviors */
