@@ -1,7 +1,7 @@
 body {
-	height: 100vh;
-	background: #f9f7e8;
-	font-family: "Raleway", sans-serif;
+  height: 100vh;
+  background: #f9f7e8;
+  font-family: "Raleway", sans-serif;
 }
 
 .map {
@@ -16,62 +16,62 @@ h3 {
 }
 
 nav .brand-logo {
-	font-weight: 700;
-	margin-left: 0.5em;
-	color: #61bfad;
+  font-weight: 700;
+  margin-left: 0.5em;
+  color: #61bfad;
 }
 
 nav ul a {
-	color: #61bfad;
-	font-weight: 700;
+  color: #61bfad;
+  font-weight: 700;
 }
 
 /* SIGNUP PAGE SPECIFIC STYLES */
 
 .signup,
 .sign-in {
-	margin-top: 20vh;
+  margin-top: 20vh;
 }
 
 .signup-box {
-	display: flex;
-	align-items: start;
-	justify-content: space-between;
-	border-radius: 1em;
-	box-shadow: 2px 5px 8px #222;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  border-radius: 1em;
+  box-shadow: 2px 5px 8px #222;
   background-color: rgba(255, 255, 255, 0.75);
 }
 
 .flex {
-	margin: 1em;
-	padding: 1em;
-	width: 50%;
+  margin: 1em;
+  padding: 1em;
+  width: 50%;
 }
 
 ul.list {
-	list-style-type: circle;
+  list-style-type: circle;
 }
 
 .primary-anchor {
-	font-size: 26px;
-	color: black;
+  font-size: 26px;
+  color: black;
 }
 
 .transparent-bg {
-	background-color: rgba(0, 0, 0, 0);
-	box-shadow: none;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
 }
 
 .btn {
-	border-radius: 3em;
+  border-radius: 3em;
   margin-bottom: 10px;
 }
 
 .display-box,
 .bio {
-	padding: 1em;
-	background-color: rgba(255, 255, 255, 0.7);
-	border-radius: 0.5em;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5em;
 }
 
 .display-box {
@@ -84,71 +84,71 @@ ul.list {
 
 .project {
   padding: 1em;
-	border-radius: 0.5em;
-	background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 0.5em;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .project:hover {
-	box-shadow: 2px 5px 8px #222;
+  box-shadow: 2px 5px 8px #222;
 }
 
 label {
-	color: black;
+  color: black;
 }
 
 .tag {
-	display: inline;
-	margin-right: 1em;
-	padding: 0.5em 1em;
-	background-color: black;
-	border-radius: 0.5em;
-	color: white;
+  display: inline;
+  margin-right: 1em;
+  padding: 0.5em 1em;
+  background-color: black;
+  border-radius: 0.5em;
+  color: white;
 }
 
 .button-pair {
-	margin-top: 1em;
+  margin-top: 1em;
 }
 
 .dropdown-content li>span {
-	color: black;
+  color: black;
 }
 
 .dropdown-content {
-	border-radius: 1em;
+  border-radius: 1em;
 }
 
 /* Overwrite Materialize defaults for input bottom borders */
 input[type=text]:not(.browser-default):focus, 
 input[type=password]:not(.browser-default):focus, 
 input[type=email]:not(.browser-default):focus {
-	border-bottom-color: blue !important;
+  border-bottom-color: blue !important;
 }
 
 .project-count,
 .username {
-	background-color: rgba(255, 255, 255, 0.75);
-	border-radius: 1em;
-	padding-left: .5em;
-	padding-right: .5em;
-	padding-bottom: .25em;
-	color: black;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 1em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-bottom: .25em;
+  color: black;
 }
 
 .justify {
-	text-align: justify;
+  text-align: justify;
 }
 
 .inline {
-	display: inline;
+  display: inline;
 }
 
 .alert-container {
-	width: 100%;
+  width: 100%;
   text-align: center;
 }
 
 nav .sidenav-trigger i {
-	color: black;
+  color: black;
 }
 
 /* Media queries to handle where I've overwritten Materialize behaviors */
@@ -157,21 +157,21 @@ nav .sidenav-trigger i {
     flex-direction: column;
   }
   .site-description {
-	  display: none;
+    display: none;
   }
   .flex {
-	  width: 100%;
+    width: 100%;
   }
   nav .brand-logo {
-	  margin-left: 0;
+    margin-left: 0;
   }
   h2 {
-  	font-size: 36px;
+    font-size: 36px;
   }
   h3 {
-  	font-size: 24px;
+    font-size: 24px;
   }
   .primary-anchor {
-  	font-size: 16px;
+    font-size: 16px;
   }
 }
