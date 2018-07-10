@@ -43,7 +43,7 @@ nav ul a {
 .flex {
   margin: 1em;
   padding: 1em;
-  width: 50%;
+  width: 50%;g
 }
 
 ul.list {
@@ -64,6 +64,9 @@ ul.list {
   border-radius: 3em;
   margin-bottom: 10px;
 }
+
+/* "Display box" is a reusable style for white background
+   with box shadow for multiple different elements */
 
 .display-box,
 .bio {
