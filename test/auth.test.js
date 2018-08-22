@@ -25,7 +25,7 @@ describe('Auth Controller', function() {
         name: 'Brian',
         password: 'password'
       })
-      // .expect('Location', '/')
+      .expect('Location', '/user')
       .expect(302, done);
     });
 
@@ -57,7 +57,7 @@ describe('Auth Controller', function() {
         email: 'new@new.co',
         password: 'password'
       })
-      // .expect('Location', '/')
+      .expect('Location', '/')
       .expect(302, done);
     });
 
