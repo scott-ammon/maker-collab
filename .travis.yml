@@ -4,8 +4,12 @@ node_js:
 cache:
   directories:
     - node_modules
-# script:
-#   - npm test
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database maker_collaboration_test;' -U postgres
+script:
+  - npm test
 deploy:
   provider: heroku
   api_key:
