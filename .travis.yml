@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: heroku
+  api_key:
+    secure: 7e043ecc-5e9b-48ac-93ac-7990dc892a95
+on:
+  branch: master
