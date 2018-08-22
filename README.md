@@ -1,4 +1,5 @@
 # Maker-Collab
+[![Build Status](https://travis-ci.org/scott-ammon/maker-collab.svg?branch=master)](https://travis-ci.org/scott-ammon/maker-collab)
 
 Live site: https://maker-collab.herokuapp.com/
 
