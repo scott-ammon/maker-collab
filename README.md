@@ -12,16 +12,17 @@ There are several websites today where people can post about their hobby electro
 
 #### This web application was developed with:
 * JavaScript
+* HTML
+* CSS
 * jQuery
 * Node.js
 * Express
 * Sequelize
-* Postgres
+* PostgreSQL
 * Chart.js
 * Mapbox GL JS
 * Materialize
-* HTML
-* CSS
+* Travis CI
 
 #### RESTful routes:
 
